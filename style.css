@@ -45,6 +45,14 @@ nav ul li a {
     cursor: pointer;
 }
 
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Step Section */
 .step {
     text-align: center;
     padding: 40px 20px;
@@ -79,6 +87,7 @@ nav ul li a {
     text-align: right;
 }
 
+/* Offer Section */
 .offer {
     padding: 40px 20px;
     text-align: center;
@@ -89,6 +98,7 @@ nav ul li a {
     margin-bottom: 10px;
 }
 
+/* About Section */
 .about {
     display: flex;
     align-items: center;
@@ -114,34 +124,33 @@ footer {
     background-color: #f5f5f5;
     border-top: 1px solid #ddd;
 }
-
-/* Step Section Adjustments */
 .step {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 40px 20px;
     gap: 20px;
-    flex-wrap: wrap; /* Ensures responsive layout */
+    flex-wrap: wrap;
     text-align: left;
     position: relative;
 }
 
 .step img {
-    max-width: 40%; /* Adjust width as needed */
+    max-width: 40%; /* Adjust image width */
     height: auto;
     border-radius: 10px;
     order: 2; /* Keep the image on the right */
     margin-left: auto; /* Push the image to the far-right */
-    transform: translateX(100px); /* Move the image even more to the right */
+    transform: translateX(100px); /* Move the image further to the right */
 }
 
 .step .content {
     max-width: 55%; /* Adjust width for text */
     order: 1; /* Keep text on the left */
-    margin-left: 70px; /* Move the text slightly to the right */
+    margin-left: 40px; /* Move the text slightly to the right */
     padding-right: 10px; /* Optional: add padding for spacing */
 }
+
 
 /* Mobile-Friendly Adjustments */
 @media screen and (max-width: 768px) {
@@ -151,11 +160,26 @@ footer {
         align-items: flex-start;
     }
 
+    /* Hide navbar by default on small screens */
     nav ul {
+        display: none;
         flex-direction: column;
         align-items: flex-start;
+        width: 100%;
     }
 
+    /* Show the hamburger icon */
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* When the navbar is active, show the menu */
+    nav.active ul {
+        display: flex;
+    }
+
+    /* Order button for mobile */
     .order-btn {
         margin-top: 10px;
         width: 100%;
@@ -163,7 +187,7 @@ footer {
         font-size: 16px;
     }
 
-    /* Step Section Adjustment */
+    /* Step Section for mobile */
     .step {
         flex-direction: column;
         text-align: center;
@@ -171,10 +195,10 @@ footer {
     }
 
     .step img {
-        max-width: 80%; /* Make the image smaller for mobile */
-        transform: translateX(0); /* Reset the translation */
+        max-width: 80%;
+        transform: translateX(0);
         margin-left: 0;
-        margin-top: 20px; /* Add margin to separate image and text */
+        margin-top: 20px;
     }
 
     .step .content {
@@ -183,7 +207,7 @@ footer {
         padding-right: 0;
     }
 
-    /* Offer Section Adjustment */
+    /* Offer Section */
     .offer {
         padding: 15px;
     }
@@ -192,23 +216,24 @@ footer {
         font-size: 20px;
     }
 
-    /* About Section Adjustment */
+    /* About Section */
     .about {
         flex-direction: column;
         padding: 15px;
     }
 
     .about img {
-        max-width: 80%; /* Make the image smaller for mobile */
+        max-width: 80%;
     }
 
     .about div {
-        max-width: 80%; /* Adjust text block width */
+        max-width: 80%;
         text-align: center;
         margin-top: 10px;
     }
 }
 
+/* Very Small Screens */
 @media screen and (max-width: 480px) {
     /* Header Adjustment */
     .logo {
@@ -240,7 +265,7 @@ footer {
     }
 
     .step img {
-        max-width: 90%; /* Make the image even smaller on very small screens */
+        max-width: 90%;
         margin-top: 15px;
     }
 
@@ -250,18 +275,17 @@ footer {
         padding-right: 0;
     }
 
-    /* Offer Section Adjustment */
+    /* Offer Section */
     .offer {
         padding: 10px;
     }
 
-    /* About Section Adjustment */
     .about {
         padding: 10px;
     }
 
     .about img {
-        max-width: 85%; /* Adjust for smaller mobile screens */
+        max-width: 85%;
     }
 
     .about div {
